@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+	<div align="center">
+	
+		<span th:utext="${message}"></span><br>
+	
+		<form th:action="@{/teacher/signup-student}" th:method="post" th:object="${students}">
+		
+			<input type="text" th:field="*{firstname}" placeholder="First Name" required><br>
+			<span  th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span><br>
+			
+			<input type="text" th:field="*{middlename}" placeholder="Middlename" required><br>
+			<span  th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></span><br>
+			
+			<input type="text" th:field="*{lastname}" placeholder="Lastname Name" required><br>
+			<span  th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span><br>
+			
+			<input type="text" th:field="*{username}" placeholder="Username" required><br>
+			<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span><br>
+			
+			<input type="text" th:field="*{password}" placeholder="Password" required><br>
+			<span  th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span><br>
+			
+			<input type="text" th:field="*{year}" placeholder="Year" required><br><br>
+<!-- 			<span  th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br> -->
+			
+			<input type="text" th:field="*{section}" placeholder="Section" required><br><br>
+<!-- 			<span  th:if="${#fields.hasErrors('section')}" th:errors="*{section}"></span><br> -->
+			
+			
+			<input type="submit" value="Add">
+		
+		</form>
+	
+	</div>
+
+</body>
+</html>

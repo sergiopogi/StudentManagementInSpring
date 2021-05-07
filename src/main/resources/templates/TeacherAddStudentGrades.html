@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+	<div align="center">
+	
+		<form th:action="@{/teacher/add-grades}" th:object="${grades}" th:method="post">
+			<label>Subject Id</label> <input type="hidden" th:field="*{subjectid}"><br>
+			<label>1st Grading</label><input type="number" th:field="*{firstgrading}"><br>
+			<label>2nd Grading</label><input type="number" th:field="*{secondgrading}"><br>
+			<label>3rd Grading</label><input type="number" th:field="*{thirdgrading}"><br>
+			<label>4rth Grading</label><input type="number" th:field="*{fourthgrading}"><br>
+			<input type="submit" value="Add">
+		</form>
+	
+	
+	</div>
+	
+</body>
+</html>

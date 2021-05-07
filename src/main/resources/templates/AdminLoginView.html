@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+	<div align="center">
+	
+	<div th:if="${param.error}"> Invalid username or password</div>
+	
+		<form action="/admin/login" method="post">
+	
+			<label>Admin Username :</label><input type="text" name="username"><br>
+			<label>Admin Password :</label><input type="text" name="password"><br>
+			<input type="submit" value="Login"> 
+	
+		</form>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+	<div align="center">
+		
+		<span th:utext="${message}"></span>
+	
+		<table border="1">
+		
+			<thead>
+				<tr>
+					<td>Firstname</td>
+					<td>Middlename</td>
+					<td>Lastname</td>
+					<td>Year</td>
+					<td>Section</td>
+					<td>Action</td>
+				</tr>
+			</thead>
+			
+			<tr th:each="studentlist : ${studentList}">
+			
+			<td th:text="${studentlist.firstname}"></td>
+			<td th:text="${studentlist.middlename}"></td>
+			<td th:text="${studentlist.lastname}"></td>
+			<td th:text="${studentlist.year}"></td>
+			<td th:text="${studentlist.section}"></td>
+			<td> <a th:href="@{/teacher/delete-student(id=${studentlist.id})}">Delete</a> 
+			<a th:href="@{/teacher/update-student(id=${studentlist.id})}">Update</a> 
+			<a th:href="@{/teacher/reset-password(id=${studentlist.id})}">Reset Password</a>
+			</td>
+			</tr>
+		
+		</table>
+	
+	</div>
+</body>
+</html>

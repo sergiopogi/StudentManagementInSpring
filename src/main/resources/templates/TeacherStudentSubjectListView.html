@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+<label>Student :</label> <span th:text="${student.firstname} + ' '+${student.middlename}+' '+${student.lastname}"></span>
+
+	<div align="center">
+	
+		<table border="1">
+		
+			<thead>
+				<tr>
+					<td>Subject Name</td>
+					<td>Teacher Name</td>
+				</tr>
+			</thead>
+			<tr th:each="subjectlist : ${subjectList}">
+				<td th:text="${subjectlist.subjectname}"></td>
+				<td th:text="${subjectlist.teachername}"></td>
+			</tr>
+		</table>
+	
+	</div>
+
+</body>
+</html>

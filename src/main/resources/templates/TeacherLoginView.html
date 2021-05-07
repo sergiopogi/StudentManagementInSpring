@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+</head>
+<body>
+
+	<div th:if="${param.error}"> Invalid username or password</div>
+	
+					
+		<form action="/teacher/login" method="post">
+		<div align="center">
+		  <div class="mb-3">
+		    <label for="exampleInputEmail1" class="form-label">Username :</label>
+		    <input type="text" name="username">
+		    <div id="emailHelp" class="form-text">We'll never share your username with anyone else.</div>
+		  </div>
+		  <div class="mb-3">
+		    <label for="exampleInputPassword1" class="form-label">Password</label>
+		    <input type="password"  name="password">
+		  </div>		  
+		  <input type="submit" value="Login" class="btn btn-primary">
+		  </div>
+		</form>
+			
+
+
+</body>
+</html>

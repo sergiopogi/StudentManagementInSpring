@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+	
+	<div align="center">
+	
+		<span th:utext="${message}"></span>
+	
+		<form th:action="@{/teacher/manage-profile}" th:object="${teachers}" th:method="post">
+		
+			<label>Username :</label><input type="text" th:field="*{username}">
+			<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span><br>
+			
+			<label>Firstname :</label><input type="text" th:field="*{firstname}">
+			<span  th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span><br>
+			
+			<label>Middlename :</label><input type="text" th:field="*{middlename}">
+			<span  th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></span><br>
+			
+			<label>Lastname :</label><input type="text" th:field="*{lastname}">
+			<span  th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span><br>
+			
+			<input type="submit" value="Update">	
+		</form>
+	
+	</div>
+	
+	<a th:href="@{/teacher/password-reset}">Reset Password</a>
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+		<div align="center">
+			
+			<form th:action="@{/admin/update-teacher}" th:method="post" th:object="${teachers}">
+				
+				<input type="hidden" th:field="*{id}">
+				<label>Username :</label><input type="text" th:field="*{username}"><br>
+				<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span><br>
+				
+				<label>Firstname :</label><input type="text" th:field="*{firstname}"><br>
+				<span  th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span><br>
+				
+				<label>Middlename :</label><input type="text" th:field="*{middlename}"><br>
+				<span  th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></span><br>
+				
+				<label>Lastname :</label><input type="text" th:field="*{lastname}"><br>
+				<span  th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span><br>
+				
+				<input type="submit" value="Update">
+				
+			</form>
+		
+		</div>
+<a th:href="@{/admin/reset-password(id=${teachers.id})}">Reset Password</a>
+
+</body>
+</html>

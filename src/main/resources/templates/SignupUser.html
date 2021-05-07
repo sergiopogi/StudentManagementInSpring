@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+
+	<div align="center">
+	
+		<form th:action="@{/teacher/add-students}" th:method="post" th:object="${studentobj}">
+		
+		<label>Firstname :</label><input type="text" th:field="*{firstname}"><br>
+		<label>Middlename</label><input type="text" th:field="*{middlename}"><br>
+		<label>Lastname :</label><input type="text" th:field="*{lastname}"><br>
+		<label>Username :</label><input type="text" th:field="*{username}"><br>
+		<label>Password :</label><input type="text" th:field="*{password}"><br>
+		<label>Year :</label><input type="text" th:field="*{year}"><br>
+		<label>Section  :</label><input type="text" th:field="*{section}"><br>
+		<input type="submit" value="Add">
+			
+		</form>
+	
+	</div>
+
+</body>
+</html>

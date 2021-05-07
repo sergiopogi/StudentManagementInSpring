@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+	<div align="center">
+	
+		<form th:action="@{/teacher/update-student}" th:method="post" th:object="${students}">
+			
+			<input type="hidden" th:field="*{id}">
+			<label>Firstname</label><input th:field="*{firstname}"><br>
+			<span  th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span><br>
+			
+			
+			
+			<label>Middlename</label><input th:field="*{middlename}"><br>
+			<span  th:if="${#fields.hasErrors('middlename')}" th:errors="*{middlename}"></span><br>
+			
+			<label>Lastname</label><input th:field="*{lastname}"><br>
+			<span  th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span><br>
+			
+			label>Username</label><input th:field="*{username}"><br>
+			<span  th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></span><br>
+			
+			<label>Year</label><input th:field="*{year}"><br>
+			<span  th:if="${#fields.hasErrors('year')}" th:errors="*{year}"></span><br>
+			
+			<label>Section</label><input th:field="*{section}"><br>
+			<span  th:if="${#fields.hasErrors('section')}" th:errors="*{section}"></span><br>
+			
+			<input type="submit" value="Update">
+		
+		</form>
+	
+	</div>
+</body>
+</html>

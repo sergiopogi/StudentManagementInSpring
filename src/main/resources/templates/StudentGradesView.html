@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Bato Elementary School</title>
+</head>
+<body>
+
+	<label>Subject name :</label><span th:text="${subjects.subjectname}"></span><br>
+	<label>Teacher name :</label><span th:text="${subjects.teachername}"></span>
+
+	<div align="center">
+	
+		<table border="1">
+			<thead>
+				<tr>
+					<td>First Grading</td>
+					<td>Second Grading</td>
+					<td>Third Grading</td>
+					<td>Fourth Grading</td>
+				</tr>
+			</thead>
+			
+			<tr th:each="studentGrades : ${grades}">
+			
+			<td th:text="${studentGrades.firstgrading}"></td>
+			<td th:text="${studentGrades.secondgrading}"></td>
+			<td th:text="${studentGrades.thirdgrading}"></td>
+			<td th:text="${studentGrades.fourthgrading}"></td>
+			
+			</tr>
+		</table>
+	
+	</div>
+
+</body>
+</html>
